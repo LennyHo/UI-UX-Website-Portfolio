@@ -1,209 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <title>Lenny's Portfolio</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #fdfbef;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 2rem;
-      font-weight: bold;
-    }
-
-    nav a,
-    header div,
-    .project {
-      font-family: 'DM Serif Display', serif;
-    }
-
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: black;
-    }
-
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-text {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 300;
-      max-width: 50%;
-      font-size: 2rem;
-    }
-
-    .hero-text h1 {
-      font-size: 1.5rem;
-    }
-
-    .hero-image img {
-      max-width: 400px;
-      height: auto;
-    }
-
-    .project-grid {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 2rem;
-      gap: 2rem;
-    }
-
-    .project {
-      flex: 1 1 45%;
-      background-color: #fdfbef;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-      animation-play-state: paused;
-    }
-
-    .project h3 {
-      text-decoration: underline;
-      font-size: 1rem;
-    }
-
-    .project h2 {
-      font-size: 1.5rem;
-    }
-
-    .project a {
-      display: inline-block;
-      margin: 1rem 0;
-      font-weight: bold;
-    }
-
-    .project img {
-      width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover img {
-      transform: scale(1.05);
-    }
-
-    .project:hover {
-      transform: scale(1.02);
-      transition: transform 0.3s ease;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <title>Lenny's Portfolio</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      body {
+        font-family: "Georgia", serif;
+        background-color: #fdfbef;
+        margin: 0;
+        padding: 0;
       }
-    }
 
-    /* Responsive layout for smaller screens */
-    @media (max-width: 768px) {
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        font-weight: bold;
+      }
+
+      nav a,
+      header div,
+      .project {
+        font-family: "DM Serif Display", serif;
+      }
+
+      nav a {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: black;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        flex-wrap: wrap;
+      }
+
       .hero-text {
-        max-width: 100%;
-        font-size: 1.5rem;
-      }
-      .hero-text h1 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        max-width: 50%;
         font-size: 2rem;
       }
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
+
+      .hero-text h1 {
+        font-size: 1.5rem;
       }
+
+      .hero-image img {
+        max-width: 400px;
+        height: auto;
+      }
+
+      .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        gap: 2rem;
+      }
+
       .project {
-        flex: 1 1 100%;
+        flex: 1 1 45%;
+        background-color: #fdfbef;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+        animation-play-state: paused;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <header>
-    <div><strong><i>Lenny</i></strong></div>
-    <nav>
-      <a href="#">About</a>
-      <a href="#">Resume</a>
-    </nav>
-  </header>
+      .project h3 {
+        text-decoration: underline;
+        font-size: 1rem;
+      }
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Hello, I’m Lenny Ho Yean Kit 👋 T-shape UI/UX designer, based in Singapore.</h1>
-      <p>I enjoy creating user-focused, enjoyable, and Human experiences for people.</p>
-    </div>
-    <div class="hero-image">
-      <img src="cover.png" alt="Cover Image" />
-    </div>
-  </section>
+      .project h2 {
+        font-size: 1.5rem;
+      }
 
-  <section class="project-grid">
-    <div class="project">
-      <h3>Project 01</h3>
-      <h2>An AI app to assist tourists in SG at SIM ION Hackathon.</h2>
-      <a href="#">Learn More about this project →</a>
-      <img src="Project_1-Cover.png" alt="Project 1" />
-    </div>
-    <div class="project">
-      <h3>Project 02</h3>
-      <h2>Storing all necessity documents in one-single platform.</h2>
-      <a href="#">Learn More about this project →</a>
-      <img src="Project_2-Cover.png" alt="Project 2" />
-    </div>
-  </section>
+      .project a {
+        display: inline-block;
+        margin: 1rem 0;
+        font-weight: bold;
+      }
 
-  <section class="project-grid">
-    <div class="project">
-      <h3>Project 03</h3>
-      <h2>New York Salad App for a small business store.</h2>
-      <a href="#">Learn More about this project →</a>
-      <img src="Project_3-Cover.png" alt="Project 3" />
-    </div>
-    <div class="project">
-      <h3>Project 04</h3>
-      <h2>Other Design projects.</h2>
-      <a href="#">Learn More about these projects →</a>
-      <img src="Project_4-Cover.png" alt="Project 4" />
-    </div>
-  </section>
+      .project img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease;
+      }
 
-  <!-- ✨ Animation scroll logic -->
-  <script>
-    const projects = document.querySelectorAll('.project');
+      .project:hover img {
+        transform: scale(1.05);
+      }
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-          observer.unobserve(entry.target);
+      .project:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive layout for smaller screens */
+      @media (max-width: 768px) {
+        .hero-text {
+          max-width: 100%;
+          font-size: 1.5rem;
+        }
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+        .hero {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .project {
+          flex: 1 1 100%;
+        }
+      }
+
+      footer {
+        background-color: #fdfbef;
+        text-align: center;
+        padding: 4rem 2rem;
+        font-family: "DM Serif Display", serif;
+      }
+
+      .footer-container h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+
+      .footer-container p {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.2rem;
+      }
+
+      .footer-container a {
+        display: inline-block;
+        font-family: "Oswald", sans-serif;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        text-decoration: underline;
+        color: black;
+      }
+
+      .footer-img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      .footer-icons {
+        margin-top: 1.5rem;
+      }
+
+      .footer-icons a {
+        font-size: 1.8rem;
+        margin: 0 0.7rem;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <strong><i>Lenny</i></strong>
+      </div>
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Resume</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          Hello, I’m Lenny Ho Yean Kit 👋 T-shape UI/UX designer, based in
+          Singapore.
+        </h1>
+        <p>
+          I enjoy creating user-focused, enjoyable, and Human experiences for
+          people.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="cover.png" alt="Cover Image" />
+      </div>
+    </section>
+
+    <section class="project-grid">
+      <div class="project">
+        <h3>Project 01</h3>
+        <h2>An AI app to assist tourists in SG at SIM ION Hackathon.</h2>
+        <a href="#">Learn More about this project →</a>
+        <img src="Project_1-Cover.png" alt="Project 1" />
+      </div>
+      <div class="project">
+        <h3>Project 02</h3>
+        <h2>Storing all necessity documents in one-single platform.</h2>
+        <a href="#">Learn More about this project →</a>
+        <img src="Project_2-Cover.png" alt="Project 2" />
+      </div>
+    </section>
+
+    <section class="project-grid">
+      <div class="project">
+        <h3>Project 03</h3>
+        <h2>New York Salad App for a small business store.</h2>
+        <a href="#">Learn More about this project →</a>
+        <img src="Project_3-Cover.png" alt="Project 3" />
+      </div>
+      <div class="project">
+        <h3>Project 04</h3>
+        <h2>Other Design projects.</h2>
+        <a href="#">Learn More about these projects →</a>
+        <img src="Project_4-Cover.png" alt="Project 4" />
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-container">
+        <img src="memoji_apple.png" alt="Lenny Memoji" class="footer-img" />
+        <h2>Let’s connect</h2>
+        <p>Feel free to reach out via my email:</p>
+        <a href="mailto:lennyyk27@gmail.com">lennyyk27@gmail.com</a>
+        <div class="footer-icons">
+          <a href="https://instagram.com/" target="_blank">📷</a>
+          <a href="https://linkedin.com/" target="_blank">💼</a>
+          <a href="https://dribbble.com/" target="_blank">🏀</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ✨ Animation scroll logic -->
+    <script>
+      const projects = document.querySelectorAll(".project");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationPlayState = "running";
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      projects.forEach((project) => {
+        observer.observe(project);
       });
-    }, { threshold: 0.1 });
-
-    projects.forEach(project => {
-      observer.observe(project);
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
