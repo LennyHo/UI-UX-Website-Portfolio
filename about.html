@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Lenny</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-family: "Oswald", sans-serif;
+        color: white;
+      }
+
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        font-family: "DM Serif Display", serif;
+      }
+
+      header .brand {
+        font-weight: bold;
+        font-style: italic;
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: white;
+        font-style: italic;
+        font-size: 1.1rem;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 4rem 2rem;
+      }
+
+      .text {
+        max-width: 60%;
+        font-size: 2rem;
+        line-height: 1.6;
+        padding-right: 1rem;
+      }
+
+      .email {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .text p {
+        max-width: 600px;
+      }
+
+      .image {
+        max-width: 35%;
+      }
+
+      .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .text {
+          max-width: 100%;
+          font-size: 1.5rem;
+        }
+        .image {
+          max-width: 100%;
+          margin-top: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Video -->
+    <video class="video-bg" autoplay muted loop playsinline>
+      <source src="cars_portfolio.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay Content -->
+    <div class="overlay">
+      <header>
+        <div class="brand">Lenny</div>
+        <nav>
+          <a href="#">About</a>
+          <a href="#">Resume</a>
+        </nav>
+      </header>
+
+      <div class="content">
+        <div class="text">
+          <p>
+            I like to create seamless, intuitive user experiences by blending in
+            innovative design principles with cutting-edge technology. I also
+            love to exercise, travel and inspired by 1980s vintage retro
+            accessories with stylish ambiance.
+          </p>
+          <p class="email">
+            Feel free to reach out via my email:<br />
+            <a
+              href="mailto:lennyyk27@gmail.com"
+              style="color: white; text-decoration: underline"
+              >lennyyk27@gmail.com</a
+            >
+          </p>
+        </div>
+        <div class="image">
+          <img src="lenny_profile.jpg" alt="Lenny Photo" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
