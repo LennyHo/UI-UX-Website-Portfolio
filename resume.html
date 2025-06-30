@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Oswald", sans-serif;
+        background-color: #fdfbef;
+        color: #000;
+        text-align: center;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      header a {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: black;
+        font-style: italic;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .resume-img {
+        max-width: 80%;
+        margin: auto;
+        display: block;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .download-btn {
+        margin: 3rem auto;
+        display: inline-block;
+        font-size: 1.5rem;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border: 2px solid #000;
+        background-color: #fdfbef;
+        color: #000;
+        position: relative;
+        box-shadow: 4px 4px 0px #000;
+        transition: all 0.2s ease;
+      }
+
+      .download-btn:hover {
+        top: 2px;
+        left: 2px;
+        box-shadow: 2px 2px 0px #000;
+      }
+
+      @media (max-width: 768px) {
+        .resume-img {
+          max-width: 95%;
+        }
+
+        .download-btn {
+          font-size: 1.2rem;
+          padding: 0.75rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <strong><i>Lenny</i></strong>
+      </div>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </header>
+
+    <h1>Resume</h1>
+
+    <img src="resume.jpg" alt="Resume Image" class="resume-img" />
+
+    <a class="download-btn" href="resume.pdf" download>Download Resume</a>
+  </body>
+</html>
