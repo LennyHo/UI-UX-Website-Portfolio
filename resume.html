@@ -3,18 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>Lenny's Portfolio</title>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
-        margin: 0;
-        font-family: "Oswald", sans-serif;
+        font-family: "Georgia", serif;
         background-color: #fdfbef;
-        color: #000;
-        text-align: center;
+        margin: 0;
+        padding: 10px 20px;
       }
 
       header {
@@ -22,73 +33,316 @@
         justify-content: space-between;
         padding: 2rem;
         font-weight: bold;
-        font-size: 1.2rem;
       }
 
-      header a {
-        margin-left: 1.5rem;
-        text-decoration: none;
-        color: black;
+      /* ✅ updated to italic serif */
+      header div,
+      nav a {
+        font-family: "DM Serif Display", serif;
         font-style: italic;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
+      nav a {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        color: black;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .section-label {
+        font-family: "Space Mono", monospace;
+        font-size: 1rem;
+        text-decoration: underline;
+        margin-bottom: 1rem;
+        display: inline-block;
+        color: #000;
+      }
+
+      .site-title {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        text-decoration: none;
+        color: black;
+      }
+
+      /* ✅ updated for clean hero styling */
+      .hero-text {
+        font-family: "Oswald", sans-serif;
+        font-weight: 300;
+        max-width: 55%;
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: #111;
+      }
+
+      .hero-text h1 {
+        font-size: 47px;
+        font-weight: 300;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image img {
+        max-width: 350px; /* Reduce width slightly */
+        display: block;
+        padding-top: 2rem; /* Optional: shift it down a bit */
+      }
+
+      .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 2rem;
+      }
+
+      .project {
+        flex: 1 1 45%;
+        background-color: #fdfbef;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+        animation-play-state: paused;
+      }
+
+      .project h3 {
+        text-decoration: underline;
+        font-size: 1rem;
+      }
+
+      .project h2 {
+        font-family: "DM Serif Display", serif;
+        font-weight: 400; /* regular */
+        font-size: 1.5rem;
+      }
+
+      .project a {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        margin: 14px 0;
+        transition: text-decoration 0.3s ease;
+      }
+
+      .project a:hover {
+        text-decoration: underline;
+      }
+
+      .project img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease;
+      }
+
+      .project:hover img {
+        transform: scale(1.05);
+      }
+
+      .project:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+
+      .resume-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
       }
 
       .resume-img {
-        max-width: 80%;
-        margin: auto;
+        max-width: 90%;
+        width: 800px;
+        height: auto;
         display: block;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 0px #111;
       }
 
       .download-btn {
-        margin: 3rem auto;
-        display: inline-block;
-        font-size: 1.5rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        background-color: #fff;
+        color: #111;
+        padding: 0.8rem 2rem;
+        border: 2px solid #111;
         text-decoration: none;
-        padding: 1rem 2rem;
-        border: 2px solid #000;
-        background-color: #fdfbef;
-        color: #000;
-        position: relative;
-        box-shadow: 4px 4px 0px #000;
+        box-shadow: 4px 4px 0 #111;
         transition: all 0.2s ease;
       }
 
       .download-btn:hover {
-        top: 2px;
-        left: 2px;
-        box-shadow: 2px 2px 0px #000;
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 0 #000;
       }
 
-      @media (max-width: 768px) {
-        .resume-img {
-          max-width: 95%;
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        .download-btn {
-          font-size: 1.2rem;
-          padding: 0.75rem 1.5rem;
+      /* Responsive layout for smaller screens */
+      @media (max-width: 768px) {
+        .hero-text {
+          max-width: 100%;
+          font-size: 1.5rem;
         }
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+        .hero {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .project {
+          flex: 1 1 100%;
+        }
+      }
+
+      footer {
+        background-color: #fdfbef;
+        text-align: center;
+        padding: 4rem 2rem;
+        font-family: "DM Serif Display", serif;
+      }
+
+      .footer-container h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+
+      .footer-container p {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+
+      .footer-container a {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 590px;
+        text-decoration: underline;
+        color: black;
+      }
+
+      .footer-img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      .footer-icons {
+        margin-top: 1.5rem;
+      }
+
+      .footer-icons a {
+        font-size: 1.8rem;
+        margin: 0 0.7rem;
+        text-decoration: none;
+      }
+
+      /* Memoji-only animation */
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .footer-img.slide-up {
+        animation: slideUp 1s ease forwards;
       }
     </style>
   </head>
+
   <body>
-      <header>
-       <a href="index.html" style="text-decoration: none">Lenny</a>
-        <nav>
-          <a href="about.html">About</a>
-          <a href="resume.html">Resume</a>
-        </nav>
-      </header>
+    <header>
+      <a href="index.html" class="site-title">Lenny</a>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="hero-text" style="width: 100%">
+        <p class="section-label" style="text-align: center">Resume</p>
 
-    <h1>Resume</h1>
+        <div class="resume-container">
+          <img src="resume.jpg" alt="Resume Image" class="resume-img" />
+          <a class="download-btn" href="HoYeanKit_CV.pdf" download
+            >Download Resume</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- ✨ Animation scroll logic -->
+    <script>
+      const projects = document.querySelectorAll(".project");
 
-    <img src="resume.jpg" alt="Resume Image" class="resume-img" />
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationPlayState = "running";
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
 
-    <a class="download-btn" href="HoYeanKit_CV.pdf" download>Download Resume</a>
+      projects.forEach((project) => {
+        observer.observe(project);
+      });
+
+      // Memoji animation on scroll into view
+      const memoji = document.getElementById("footer-memoji");
+
+      const memojiObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
+              memoji.classList.remove("slide-up");
+              void memoji.offsetWidth; // trigger reflow
+              memoji.classList.add("slide-up");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      memojiObserver.observe(memoji);
+    </script>
   </body>
 </html>
