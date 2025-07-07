@@ -34,6 +34,7 @@
         font-weight: bold;
       }
 
+      /* ✅ updated to italic serif */
       header div,
       nav a {
         font-family: "DM Serif Display", serif;
@@ -51,7 +52,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 2rem;
-        gap: 4rem;
+        gap: 4rem; /* more space between text and image */
         flex-wrap: wrap;
       }
       .section-label {
@@ -78,7 +79,7 @@
       nav a::after {
         content: "";
         position: absolute;
-        bottom: -5px;
+        bottom: -5px; /* spacing from text */
         left: 0;
         width: 0%;
         height: 2px;
@@ -91,6 +92,7 @@
         width: 100%;
       }
 
+      /* ✅ updated for clean hero styling */
       .hero-text {
         font-family: "Oswald", sans-serif;
         font-weight: 300;
@@ -115,9 +117,9 @@
       }
 
       .hero-image img {
-        max-width: 350px;
+        max-width: 350px; /* Reduce width slightly */
         display: block;
-        padding-top: 2rem;
+        padding-top: 2rem; /* Optional: shift it down a bit */
       }
 
       .project-grid {
@@ -125,6 +127,11 @@
         flex-wrap: wrap;
         padding: 1rem;
         gap: 2rem;
+      }
+
+      .project-details {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.1rem;
       }
 
       .project {
@@ -143,7 +150,7 @@
 
       .project h2 {
         font-family: "DM Serif Display", serif;
-        font-weight: 400;
+        font-weight: 400; /* regular */
         font-size: 1.5rem;
       }
 
@@ -212,6 +219,26 @@
         width: 100%;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .back-button {
+        float: left;
+        padding: 0.7rem 0.8rem;
+        font-family: "DM Serif Display", serif;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 5px 5px 0 black;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .back-button:hover {
+        box-shadow: 2px 2px 0 black;
+        transform: translate(2px, 2px);
       }
 
       @keyframes fadeInUp {
@@ -310,59 +337,37 @@
       </nav>
     </header>
 
-    <section class="hero"></section>
-
     <section class="scroll-gallery">
+      <!-- <a href="index.html" class="back-button">back</a> -->
       <h2 class="section-heading">Design Projects</h2>
-      <p>Feel free to scroll through to view my design projects I used to do for my own inspirations!</p>
+      <p style="font-family: Oswald, sans-serif">
+        Feel free to scroll through to view my design projects I used to do for
+        my own inspirations!
+      </p>
       <div class="scroll-images">
         <div class="scroll-img">
-          <img
-            src="fordlandingpage.png"
-            alt="Prototype 1"
-          />
+          <img src="fordlandingpage.png" alt="Prototype 1" />
         </div>
         <div class="scroll-img">
-          <img
-            src="porsche_landingpage.jpg"
-            alt="Prototype 2"
-          />
+          <img src="porsche_landingpage.jpg" alt="Prototype 2" />
         </div>
         <div class="scroll-img">
-          <img
-            src="bloomberg.jpg"
-            alt="Prototype 3"
-          />
+          <img src="bloomberg.jpg" alt="Prototype 3" />
         </div>
         <div class="scroll-img">
-          <img
-            src="landingpageprototype.jpg"
-            alt="Prototype 4"
-          />
+          <img src="landingpageprototype.jpg" alt="Prototype 4" />
         </div>
         <div class="scroll-img">
-          <img
-            src="Imac_1.jpg"
-            alt="Prototype 5"
-          />
+          <img src="Imac_1.jpg" alt="Prototype 5" />
         </div>
         <div class="scroll-img">
-          <img
-            src="Imac_2.jpg"
-            alt="Prototype 6"
-          />
+          <img src="Imac_2.jpg" alt="Prototype 6" />
         </div>
         <div class="scroll-img">
-          <img
-            src="ferrariposter.jpg"
-            alt="Prototype 7"
-          />
+          <img src="ferrariposter.jpg" alt="Prototype 7" />
         </div>
         <div class="scroll-img">
-          <img
-            src="mercedesbenzlandingpage.jpg"
-            alt="Prototype 8"
-          />
+          <img src="mercedesbenzlandingpage.jpg" alt="Prototype 8" />
         </div>
       </div>
     </section>
@@ -454,11 +459,21 @@
             }
           });
         },
-        { threshold: 0.2 }
+        { threshold: 0.02 }
       );
 
       scrollImgs.forEach((img) => {
         scrollObserver.observe(img);
+      });
+
+      // Ensure first image is visible if already in viewport
+      window.addEventListener("DOMContentLoaded", () => {
+        scrollImgs.forEach((img) => {
+          const rect = img.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            img.classList.add("visible");
+          }
+        });
       });
     </script>
   </body>
