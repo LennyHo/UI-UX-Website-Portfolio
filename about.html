@@ -61,11 +61,32 @@
         font-style: italic;
       }
 
-      .site-title {
-        font-family: "DM Serif Display", serif;
-        font-style: italic;
+      .site-title,
+      nav a {
+        position: relative;
+        display: inline-block;
         text-decoration: none;
         color: white;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transition: color 0.3s ease;
+      }
+
+      .site-title::after,
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* spacing from text */
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        transition: width 0.4s ease;
+      }
+
+      .site-title:hover::after,
+      nav a:hover::after {
+        width: 100%;
       }
 
       nav a {
