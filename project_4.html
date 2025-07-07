@@ -8,14 +8,13 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      href="https://://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
     <title>Lenny's Portfolio</title>
     <style>
       html {
@@ -35,7 +34,6 @@
         font-weight: bold;
       }
 
-      /* ✅ updated to italic serif */
       header div,
       nav a {
         font-family: "DM Serif Display", serif;
@@ -53,7 +51,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 2rem;
-        gap: 4rem; /* more space between text and image */
+        gap: 4rem;
         flex-wrap: wrap;
       }
       .section-label {
@@ -65,14 +63,34 @@
         color: #000;
       }
 
-      .site-title {
-        font-family: "DM Serif Display", serif;
-        font-style: italic;
+      .site-title,
+      nav a {
+        position: relative;
+        display: inline-block;
         text-decoration: none;
         color: black;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transition: color 0.3s ease;
       }
 
-      /* ✅ updated for clean hero styling */
+      .site-title::after,
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: black;
+        transition: width 0.4s ease;
+      }
+
+      .site-title:hover::after,
+      nav a:hover::after {
+        width: 100%;
+      }
+
       .hero-text {
         font-family: "Oswald", sans-serif;
         font-weight: 300;
@@ -97,9 +115,9 @@
       }
 
       .hero-image img {
-        max-width: 350px; /* Reduce width slightly */
+        max-width: 350px;
         display: block;
-        padding-top: 2rem; /* Optional: shift it down a bit */
+        padding-top: 2rem;
       }
 
       .project-grid {
@@ -125,11 +143,11 @@
 
       .project h2 {
         font-family: "DM Serif Display", serif;
-        font-weight: 400; /* regular */
+        font-weight: 400;
         font-size: 1.5rem;
       }
 
-      .project a{
+      .project a {
         font-family: "Oswald", sans-serif;
         font-weight: 500;
         color: black;
@@ -159,6 +177,43 @@
         transition: transform 0.3s ease;
       }
 
+      .scroll-gallery {
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .scroll-gallery .section-heading {
+        font-family: "DM Serif Display", serif;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .scroll-images {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .scroll-img {
+        max-width: 600px;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .scroll-img.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-img img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -170,7 +225,6 @@
         }
       }
 
-      /* Responsive layout for smaller screens */
       @media (max-width: 768px) {
         .hero-text {
           max-width: 100%;
@@ -230,7 +284,6 @@
         text-decoration: none;
       }
 
-      /* Memoji-only animation */
       @keyframes slideUp {
         from {
           opacity: 0;
@@ -257,9 +310,62 @@
       </nav>
     </header>
 
-    <section class="hero">
-    </section>
+    <section class="hero"></section>
 
+    <section class="scroll-gallery">
+      <h2 class="section-heading">Design Projects</h2>
+      <p>Feel free to scroll through to view my design projects I used to do for my own inspirations!</p>
+      <div class="scroll-images">
+        <div class="scroll-img">
+          <img
+            src="fordlandingpage.png"
+            alt="Prototype 1"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="porsche_landingpage.jpg"
+            alt="Prototype 2"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="bloomberg.jpg"
+            alt="Prototype 3"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="landingpageprototype.jpg"
+            alt="Prototype 4"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="Imac_1.jpg"
+            alt="Prototype 5"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="Imac_2.jpg"
+            alt="Prototype 6"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="ferrariposter.jpg"
+            alt="Prototype 7"
+          />
+        </div>
+        <div class="scroll-img">
+          <img
+            src="mercedesbenzlandingpage.jpg"
+            alt="Prototype 8"
+          />
+        </div>
+      </div>
+    </section>
 
     <footer id="footer">
       <div class="footer-container">
@@ -300,7 +406,6 @@
       </div>
     </footer>
 
-    <!-- ✨ Animation scroll logic -->
     <script>
       const projects = document.querySelectorAll(".project");
 
@@ -320,7 +425,6 @@
         observer.observe(project);
       });
 
-      // Memoji animation on scroll into view
       const memoji = document.getElementById("footer-memoji");
 
       const memojiObserver = new IntersectionObserver(
@@ -328,7 +432,7 @@
           entries.forEach((entry) => {
             if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
               memoji.classList.remove("slide-up");
-              void memoji.offsetWidth; // trigger reflow
+              void memoji.offsetWidth;
               memoji.classList.add("slide-up");
             }
           });
@@ -337,6 +441,25 @@
       );
 
       memojiObserver.observe(memoji);
+
+      // Scroll trigger for image gallery
+      const scrollImgs = document.querySelectorAll(".scroll-img");
+
+      const scrollObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      scrollImgs.forEach((img) => {
+        scrollObserver.observe(img);
+      });
     </script>
   </body>
 </html>
