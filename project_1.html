@@ -498,19 +498,46 @@
 .solution-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   align-items: center;
 }
 
+.feature-image {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.feature-image {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.feature-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .solution-image {
-  flex: 1 1 55%;
-  min-width: 280px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.solution-image {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
 .solution-image img {
+  max-width: 400px;
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .solution-description {
@@ -811,7 +838,7 @@
   <div class="painpoints-content">
     <!-- Image Left -->
     <div class="painpoints-image">
-      <img src="painpoints_visual.png" alt="Traveler with Map" />
+      <img src="frustrated-male-tourist.jpg" alt="Traveler with Map" />
     </div>
 
     <!-- Bullet Points Right -->
@@ -854,11 +881,11 @@
 
   <div class="solution-content">
     <!-- Left: Red visual -->
-    <div class="solution-image">
-      <img src="design_solution_visual.png" alt="RedDot Design" />
+    <div class="feature-image">
+      <img src="features.png" alt="RedDot Design" />
     </div>
     <div class="solution-image">
-      <img src="design_solution_visual.png" alt="RedDot Design" />
+      <img src="solution.png" alt="RedDot Design" />
     </div>
   </div>
 </section>
