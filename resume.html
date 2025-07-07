@@ -67,11 +67,32 @@
         color: #000;
       }
 
-      .site-title {
-        font-family: "DM Serif Display", serif;
-        font-style: italic;
+      .site-title,
+      nav a {
+        position: relative;
+        display: inline-block;
         text-decoration: none;
         color: black;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transition: color 0.3s ease;
+      }
+
+      .site-title::after,
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* spacing from text */
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: black;
+        transition: width 0.4s ease;
+      }
+
+      .site-title:hover::after,
+      nav a:hover::after {
+        width: 100%;
       }
 
       /* ✅ updated for clean hero styling */
