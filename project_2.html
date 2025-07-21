@@ -65,11 +65,32 @@
         color: #000;
       }
 
-      .site-title {
-        font-family: "DM Serif Display", serif;
-        font-style: italic;
+      .site-title,
+      nav a {
+        position: relative;
+        display: inline-block;
         text-decoration: none;
         color: black;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transition: color 0.3s ease;
+      }
+
+      .site-title::after,
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* spacing from text */
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: black;
+        transition: width 0.4s ease;
+      }
+
+      .site-title:hover::after,
+      nav a:hover::after {
+        width: 100%;
       }
 
       /* ✅ updated for clean hero styling */
@@ -109,6 +130,11 @@
         gap: 2rem;
       }
 
+      .project-details {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.1rem;
+      }
+
       .project {
         flex: 1 1 45%;
         background-color: #fdfbef;
@@ -129,7 +155,7 @@
         font-size: 1.5rem;
       }
 
-      .project a{
+      .project a {
         font-family: "Oswald", sans-serif;
         font-weight: 500;
         color: black;
@@ -158,6 +184,644 @@
         transform: scale(1.02);
         transition: transform 0.3s ease;
       }
+
+      .red-dot-section {
+        text-align: center;
+        margin: 4rem 0;
+      }
+
+      .Tripsafe-title {
+        font-family: "DM Serif Display", serif;
+        color: #001582;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .red-dot-image img {
+        max-width: 50%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .back-button {
+        float: left;
+        padding: 0.7rem 0.8rem;
+        font-family: "DM Serif Display", serif;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 5px 5px 0 black;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .back-button:hover {
+        box-shadow: 2px 2px 0 black;
+        transform: translate(2px, 2px);
+      }
+
+.project-overview {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #fdfbef;
+  flex-wrap: wrap;
+}
+
+.overview-text {
+  flex: 1 1 50%;
+  font-family: "Georgia", serif;
+  color: #111;
+}
+
+.overview-text h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.overview-text h3 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.overview-text p {
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+
+.overview-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+  .overview-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  font-family: "Oswald", sans-serif;
+  background-color: #fdfbef;
+  border-top: 1px dotted #888;
+  margin-top: 3rem;
+}
+
+.overview-left {
+  flex: 1 1 55%;
+  min-width: 300px;
+}
+
+.overview-right {
+  flex: 1 1 35%;
+  min-width: 250px;
+  text-align: center;
+}
+
+.overview-right img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.overview-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.overview-subtitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.overview-highlight {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.overview-body {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.overview-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: black;
+}
+
+.research-section {
+  padding: 2rem;
+}
+
+.research-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.research-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.research-left {
+  flex: 1 1 55%;
+}
+
+.research-right {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column; /* Add this */
+  align-items: flex-start; /* Add this */
+}
+
+
+.research-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.research-heading {
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.audience-list {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.audience-list li {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.interviews-section {
+  padding: 2rem;
+  background-color: #fefcf3;
+  font-family: "DM Serif Display", serif;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.interview-images {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.interview-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.takeaways-section {
+  padding: 2rem;
+  background-color: #fefcf3;
+  font-family: "Oswald", sans-serif;
+}
+
+.section-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.takeaway-block {
+  margin-bottom: 2rem;
+}
+
+.takeaway-block h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.takeaway-block ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .research-section {
+    flex-direction: column;
+  }
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .overview-section {
+    flex-direction: column;
+  }
+
+  .overview-right img {
+    max-width: 100%;
+  }
+}
+
+.competitive-section {
+  padding: 3rem 1rem;
+  background-color: #fdfbef;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.competitive-heading {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.3rem;
+  color: #d72638;
+  margin-bottom: 2rem;
+}
+
+.competitive-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+
+.card-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d72638;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem 0;
+}
+
+.card-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.wireframes-section {
+  background-color: #fdfbef;
+  padding: 3rem 1rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.wireframes-heading {
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.wireframes-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.wireframes-image {
+  flex: 1 1 60%;
+  min-width: 300px;
+}
+
+.wireframes-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.wireframes-video {
+  flex: 1 1 35%;
+  min-width: 280px;
+}
+
+.video-label {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.wireframes-video video {
+  width: 50%;
+  max-width: 400px; /* 👈 change this value to resize */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wireframes-content {
+    flex-direction: column;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .solution-content {
+    flex-direction: column;
+  }
+
+  .solution-description {
+    font-size: 1.2rem;
+  }
+}
+
+.design-process-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.design-process-section img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.research-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  background-color: #fdfbef;
+  font-family: "Oswald", sans-serif;
+}
+
+.research-left,
+.research-right {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.research-heading {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.research-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #111;
+  font-weight: 300;
+}
+
+ /* applies to competitive analysis and empathy map */
+      .design-process-section {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .design-process-section img {
+        max-width: 100%;
+        height: auto;
+        display: inline-block;
+      }
+
+      /* pain section */
+      .pain-section {
+        padding: 2rem;
+        background-color: #fefcf3;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      .pain-container {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .pain-image {
+        flex: 1 1 40%;
+      }
+
+      .pain-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+
+      .pain-text {
+        flex: 1 1 55%;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .pain-text ol {
+        padding-left: 1.2rem;
+      }
+
+      .pain-text li {
+        margin-bottom: 1.5rem;
+      }
+
+      .persona-section {
+        padding: 2rem;
+        background-color: #fefcf3;
+        font-family: "Oswald", sans-serif;
+        text-align: left;
+      }
+
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .persona-description {
+        font-size: 1.2rem;
+        max-width: 1000px;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .persona-image-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+
+      .persona-image-wrapper img {
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .design-solution-section {
+        padding: 2rem;
+        background-color: #fefcf3;
+        font-family: "DM Serif Display", serif;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      .prototype-images {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .prototype-box {
+        flex: 1 1 45%;
+        background-color: #fdd76e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      .prototype-box img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .sketches-section {
+        padding: 2rem;
+        background-color: #fefcf3;
+        font-family: "Oswald", sans-serif;
+        text-align: center;
+      }
+
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      .sketch-container {
+        display: inline-block;
+        background-color: #fdd76e;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .sketch-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .sketch-description {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        line-height: 1.7;
+      }
+
+      .wireframe-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem;
+        background-color: #fefcf3;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .wireframe-left,
+      .wireframe-right {
+        flex: 1 1 45%;
+        text-align: center;
+      }
+
+      .wireframe-left img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .wireframe-right video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .painpoints-content {
+    flex-direction: column;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100px;
+  }
+}
 
       @keyframes fadeInUp {
         from {
@@ -210,7 +874,7 @@
         font-family: "Oswald", sans-serif;
         font-size: 1.2rem;
         font-weight: 590px;
-        text-decoration: underline;
+        text-decoration: none;
         color: black;
       }
 
@@ -257,10 +921,282 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <a href="index.html" class="back-button">back</a>
+    <section class="red-dot-section">
+      <h2 class="Tripsafe-title">Tripsafe</h2>
+      <div class="Tripsafe_image">
+        <img src="tripsafe_cover.png" alt="tripsafe Project" />
+      </div>
     </section>
 
+    <section>
+      <div class="project-details">
+        <p><strong>Role:</strong> UI/UX Designer</p>
+        <p>
+          <strong>Scope:</strong> User Research, User Interview, Competitive Analysis, User Personas, Empathy Map, Customer journey Map, User flow, Hi-Fi Wireframes
+        </p>
+        <p><strong>Timeline:</strong> 10 weeks</p>
+        <p><strong>Year:</strong> 2024</p>
+        <p>
+          <strong>Location:</strong> Singapore Institute of Management (SIM),
+          ION Hackathon
+        </p>
+        <p><strong>Tools:</strong> Figma, Canva</p>
+      </div>
+    </section>
 
+<section class="project-overview">
+  <div class="overview-text">
+    <h2>Project Overview</h2>
+
+    <h3>How to create an app to store travel documents?</h3>
+    <p>
+      One of the biggest struggles for international travelers faces, is collating different types of travel documents in an efficient manner. It is also time-consuming tasks of gathering various types of travel documents in the digital era.
+    </p>
+
+    <h3>Main Goal</h3>
+    <p>
+      The main goal is to assist travelers who often for oversea work, foreign universities to use a faster convenient app to showcase digital documents before they arrive at the arrival checkpoints.
+    </p>
+  </div>
+
+  <div class="overview-image">
+    <img src="tripsafe_image1.png" alt="Project Illustration" />
+  </div>
+</section>
+
+<section class="research-section">
+  <div class="research-container">
+    <div class="research-left">
+      <h2 class="research-heading">Imagine as a traveler...</h2>
+      <ol class="audience-list">
+        <li>What information do you need to be aware when you have arrive my destination?</li>
+        <li>What do you encounter when you provide your travel documents?</li>
+        <li>How will you feel if you did not prepare or bring sufficient travel documents?</li>
+        <li>How can I expedite the process as a traveler to clear at the immigration checkpoint?</li>
+      </ol>
+    </div>
+    <div class="research-right">
+      <img src="critical-questions.png" alt="Project Illustration" />
+    </div>
+  </div>
+</section>
+
+<section class="design-process-section">
+  <h2 class="research-heading">Design Process</h2>
+  <img src="design-process.png" alt="Design Process Overview" />
+</section>
+
+<section class="design-process-section">
+  <h2 class="research-heading">Design Timeline (10 weeks)</h2>
+  <img src="design-timeline.png" alt="Design timeline Overview" />
+</section>
+
+<section class="research-section">
+  <div class="research-container">
+    <div class="research-left">
+      <h2 class="research-heading">User Research</h2>
+      <p class="research-text">
+        I conducted user research involving focus groups with locals or foreigners who have Permanent residents or citizenship, travels often in and out of Singapore. These insights from the interviews shaped our understanding of the target audience's needs and preferences, guiding the design strategy for conveniences and seamless experience.
+      </p>
+    </div>
+
+    <div class="research-right">
+      <h2 class="research-heading">Target Audiences</h2>
+      <ol class="audience-list">
+        <li><strong>Frequent business travelers</strong></li>
+        <li><strong>Family Travelers</strong></li>
+        <li><strong>International Students</strong></li>
+        <li><strong>Senior Travelers</strong></li>
+        <li><strong>Digital Nomad</strong></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="project-overview">
+  <div class="overview-text">
+    <h2>Qualititve Research</h2>
+    <p>
+      I began to use quantitative research to gain deeper insights into the perceptions and interests of the target audience. By analyzing travelers' experiences through immigration checkpoints, I was able to better understand their user experiences and levels of familiarity with these processes.
+    </p>
+  </div>
+</section>
+
+<section class="interviews-section">
+  <h2 class="section-title">User Interviews</h2>
+  <div class="interview-images">
+    <div class="interview-image">
+      <h3>user interview 1</h3>
+      <img src="user-interview-1.png" alt="User Interview 1">
+    </div>
+    <div class="interview-image">
+      <h3>user interview 2</h3>
+      <img src="user-interview-2.png" alt="User Interview 2">
+    </div>
+  </div>
+</section>
+
+  <section class="design-process-section">
+      <h2 class="research-heading"></h2>
+      <h3>Competitive Analysis</h3>
+      <img src="competitive-Analysis.png" alt="Design Process Overview" />
+    </section>
+
+    <section class="design-process-section">
+      <h2 class="research-heading"></h2>
+      <h3>Empathy Map</h3>
+      <img src="empathy-map.png" alt="Design Process Overview" />
+    </section>
+
+    <section class="pain-section">
+      <h2 class="section-title">Pain Points</h2>
+      <div class="pain-container">
+        <div class="pain-image">
+          <img src="pain-points.png" alt="Confused traveler illustration" />
+        </div>
+        <div class="pain-text">
+          <ol>
+            <li>
+              <strong
+                ><u
+                  >Time consuming to collate digital or physical documents</u
+                ></strong
+              ><br />
+              Preparing and collating the necessary travel documents can be an
+              incredibly time-consuming process. Travelers must gather both
+              digital and physical documents, ensure that all paperwork is
+              accurate and up-to-date, and align it with their flight schedules.
+            </li>
+            <li>
+              <strong
+                ><u
+                  >Keeping themselves to update any changes of the visas</u
+                ></strong
+              ><br />
+              Travelers may need to stay updated with frequent changes to visa
+              regulations and requirements, which can be challenging and
+              time-consuming. It also creates a significant stress and
+              uncertainty for those planning international travel.
+            </li>
+            <li>
+              <strong><u>Overwhelming Functionality of Travel Apps</u></strong
+              ><br />
+              Travelers remain unaware of the full range of functionalities
+              available in travel apps designed to manage and store travel
+              documents. Many users are not familiar with these apps’ features
+              or how they can streamline the organization of travel-related
+              documents. This lack of awareness can lead to missed opportunities
+              for simplifying travel planning and documentation management.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="persona-section">
+      <h2 class="section-title">User Persona</h2>
+      <p class="persona-description">
+        Tom Willis’s persona comprises of three user interviews to summarize, by
+        covering the basic information, along with a few detailed information to
+        share about his user experiences as a traveler from his past trips.
+        Crafting a comprehensive persona, is to illustrate and understand his
+        needs and pain points.
+      </p>
+      <div class="persona-image-wrapper">
+        <img src="user_Persona.png" alt="Tom Willis User Persona" />
+      </div>
+    </section>
+
+    <section class="design-process-section">
+      <h2 class="research-heading"></h2>
+      <h3>Customer Journey Map</h3>
+      <img src="user_customer_journey_map.png" alt="Design Process Overview" />
+    </section>
+
+    <section class="design-process-section">
+      <h2 class="research-heading"></h2>
+      <h3>User Flow</h3>
+      <img src="user-flow.png" alt="Design Process Overview" />
+    </section>
+
+    <section class="design-solution-section">
+      <h2 class="section-title">Design Solution / Prototype</h2>
+      <div class="prototype-images">
+        <div class="prototype-box">
+          <img
+            src="Tripsafe_coverpage_1.png"
+            alt="TripSafe Introduction Screen"
+          />
+        </div>
+        <div class="prototype-box">
+          <img src="Tripsafe_coverpage_2.png" alt="TripSafe Login Screen" />
+        </div>
+      </div>
+    </section>
+
+    <section class="sketches-section">
+      <h2 class="section-title">Sketches</h2>
+
+      <div class="sketch-container">
+        <img src="sketches_low_fi.jpg" alt="TripSafe Sketches" />
+      </div>
+
+      <p class="sketch-description">
+        <strong><u>Description</u></strong
+        ><br />
+        After gathering research and pain points from the target audiences, I
+        start by sketching the wireframes to visualize the concept of TripSafe
+        and creating unique features to support user needs.
+      </p>
+    </section>
+
+    <section class="design-process-section">
+      <h2 class="research-heading"></h2>
+      <h3>Mid-Fi Wireframes</h3>
+      <img src="mid-fi-Wireframes.png" alt="Design Process Overview" />
+    </section>
+    <section class="wireframe-section">
+      <div class="wireframe-left">
+        <h2 class="section-title">High-Fi Wireframes</h2>
+        <img src="tripsafe.png" alt="TripSafe Wireframes" />
+      </div>
+
+      <div class="wireframe-right">
+        <h2 class="section-title">Prototype preview</h2>
+        <video controls>
+          <source src="tripsafe_prototype.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+<section class="takeaways-section">
+  <h2 class="section-title">Key Takeaways</h2>
+
+  <div class="takeaway-block">
+    <h3>Learning & accomplishments</h3>
+    <ul>
+      <li>Expanded my knowledge on designing for target audiences through different backgrounds.</li>
+      <li>Strengthened my user interviewing skills, conducting usability test, and validating designs through user testing.</li>
+      <li>Familize myself with Figma and Adobe illustrator to create mid & high fidelity wireframes.</li>
+      <li>Learned how collaboration can enrich the design process and challenge personal design assumptions through dialogue and iterations.</li>
+    </ul>
+  </div>
+
+  <div class="takeaway-block">
+    <h3>Further Improvements</h3>
+    <ul>
+      <li>Refined the wireframe designs to cater unique functionalities to be more user-friendly.</li>
+      <li>Need to conduct more research on the security and technical aspects of the app concept.</li>
+      <li>The design concept for “document folder screen” needs to be more neater and easier for the user to use.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Keep your footer below this -->
+<footer id="footer">
     <footer id="footer">
       <div class="footer-container">
         <img
@@ -337,6 +1273,27 @@
       );
 
       memojiObserver.observe(memoji);
+
+  const video = document.getElementById("prototypeVideo");
+
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => console.log("Autoplay failed:", err));
+        } else {
+          video.pause();
+        }
+      });
+    },
+    {
+      threshold: 0.3, // only play when 30% visible
+    }
+  );
+
+  if (video) {
+    videoObserver.observe(video);
+  }
     </script>
   </body>
 </html>
